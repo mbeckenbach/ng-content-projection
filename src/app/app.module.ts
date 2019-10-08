@@ -8,6 +8,7 @@ import { PageOneComponent } from './page-one/page-one.component';
 import { PageTwoComponent } from './page-two/page-two.component';
 import { ContextActionsPortalComponent } from './context-actions/context-actions-portal.component';
 import { PortalModule } from '@angular/cdk/portal';
+import { ContextActionsComponent } from './context-actions/context-actions.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PortalModule } from '@angular/cdk/portal';
     HomeComponent,
     PageOneComponent,
     PageTwoComponent,
-    ContextActionsPortalComponent
+    ContextActionsPortalComponent,
+    ContextActionsComponent
   ],
   imports: [
     BrowserModule,

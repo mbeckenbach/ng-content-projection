@@ -1,0 +1,7 @@
+<ng-container *ngIf="contextActionsService.contextActionsPortal$ | async as portal; else noPortalHost">
+  <ng-container [cdkPortalHost]="portal"></ng-container>
+</ng-container>
+
+<ng-template #noPortalHost>
+  <ng-content></ng-content>
+</ng-template>

@@ -2,26 +2,42 @@
 <ng-container>
   <h1>Page Two</h1>
 
-  <form (ngSubmit)="onSubmit()" [formGroup]="form">
-    <button #pseudoSubmit style="display: none;" type="submit"></button>
+  <form (ngSubmit)="onSubmit()"
+        [formGroup]="form">
+    <button #pseudoSubmit
+            style="display: none;"
+            type="submit"></button>
 
-    <div>
-      <label for="someControl">Some control</label><br>
+    <mat-form-field appearance="outline"
+                    class="example-full-width">
+      <mat-label>Some control</mat-label>
       <input #someControlInput
              [formControl]="controls.someControl"
-             id="someControl">
-    </div>
+             matInput>
+    </mat-form-field>
 
   </form>
 </ng-container>
 
 <app-context-actions *ngIf="form.enabled">
   <div class="context-actions">
-    <button (click)="pseudoSubmit.click()" type="button">SAVE</button>
-    <button (click)="onCancelClick()" type="button">CANCEL</button>
+    <button (click)="pseudoSubmit.click()"
+            mat-icon-button
+            type="button">
+      <mat-icon>save</mat-icon>
+    </button>
+    <button (click)="onCancelClick()"
+            mat-icon-button
+            type="button">
+      <mat-icon>cancel</mat-icon>
+    </button>
   </div>
 </app-context-actions>
 
 <app-context-actions *ngIf="form.disabled">
-  <button (click)="onEditClick()" type="button">Edit</button>
+  <button (click)="onEditClick()"
+          mat-icon-button
+          type="button">
+    <mat-icon>edit</mat-icon>
+  </button>
 </app-context-actions>

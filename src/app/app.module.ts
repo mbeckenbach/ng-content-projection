@@ -10,6 +10,8 @@ import { ContextActionsPortalComponent } from './context-actions/context-actions
 import { PortalModule } from '@angular/cdk/portal';
 import { ContextActionsComponent } from './context-actions/context-actions.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatTabsModule, MatToolbarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     PortalModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatTabsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

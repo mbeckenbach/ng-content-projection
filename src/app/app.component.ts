@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'portal';
+  navLinks = [
+    { path: ['home'], label: 'Home' },
+    { path: ['page-one'], label: 'Page One' },
+    { path: ['page-two'], label: 'Page Two' },
+  ];
 }

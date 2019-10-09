@@ -1,13 +1,25 @@
-<div class="header">
-  <a [routerLink]="['home']">Home</a>
-  <a [routerLink]="['page-one']">Page One</a>
-  <a [routerLink]="['page-two']">Page Two</a>
+<mat-toolbar color="primary">
+
+  <h1>Content Projection Demo</h1>
 
   <div class="spacer"></div>
 
-  <app-context-actions-portal class="context-actions">
-    Place context actions here
+  <app-context-actions-portal>
   </app-context-actions-portal>
-</div>
+</mat-toolbar>
 
-<router-outlet></router-outlet>
+<nav color="accent"
+     mat-tab-nav-bar>
+  <a #rla="routerLinkActive"
+     *ngFor="let link of navLinks"
+     [active]="rla.isActive"
+     [routerLink]="link.path"
+     mat-tab-link
+     routerLinkActive>
+    {{link.label}}
+  </a>
+</nav>
+
+<div class="main">
+  <router-outlet></router-outlet>
+</div>

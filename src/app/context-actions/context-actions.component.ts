@@ -5,7 +5,6 @@ import { TemplatePortal } from '@angular/cdk/portal';
 @Component({
   selector: 'app-context-actions',
   templateUrl: './context-actions.component.html',
-  styleUrls: ['./context-actions.component.scss']
 })
 export class ContextActionsComponent implements AfterViewInit, OnDestroy {
 

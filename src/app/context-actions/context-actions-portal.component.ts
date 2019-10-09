@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ContextActionsService } from './context-actions.service';
 
 @Component({
@@ -6,11 +6,8 @@ import { ContextActionsService } from './context-actions.service';
   templateUrl: './context-actions-portal.component.html',
   styleUrls: ['./context-actions-portal.component.scss']
 })
-export class ContextActionsPortalComponent implements OnInit {
+export class ContextActionsPortalComponent {
 
   constructor(private contextActionsService: ContextActionsService) { }
-
-  ngOnInit() {
-  }
 
 }

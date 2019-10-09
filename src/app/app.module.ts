@@ -11,7 +11,18 @@ import { PortalModule } from '@angular/cdk/portal';
 import { ContextActionsComponent } from './context-actions/context-actions.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatTabsModule, MatToolbarModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatTabsModule,
+  MatToolbarModule
+} from '@angular/material';
+import { ContextTitleDirective } from './context-title/context-title.directive';
+import { ContextTitlePortalComponent } from './context-title/context-title-portal.component';
+import { ContextTitleComponent } from './context-title/context-title.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +31,10 @@ import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, Mat
     PageOneComponent,
     PageTwoComponent,
     ContextActionsPortalComponent,
-    ContextActionsComponent
+    ContextActionsComponent,
+    ContextTitleDirective,
+    ContextTitlePortalComponent,
+    ContextTitleComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +48,8 @@ import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, Mat
     MatTabsModule,
     MatIconModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

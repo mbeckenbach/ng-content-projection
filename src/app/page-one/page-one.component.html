@@ -1,6 +1,14 @@
+<!-- Page title -->
+<app-context-title>
+  <a [routerLink]="['/home']"
+     mat-icon-button>
+    <mat-icon>arrow_back</mat-icon>
+  </a>
+  <h1>Page One</h1>
+</app-context-title>
+
 <!-- Page content -->
 <ng-container>
-  <h1>Page One</h1>
   <p>
     <b>Search Term:</b> {{searchTerm ? searchTerm : '-'}}
   </p>

@@ -1,18 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-page-one',
   templateUrl: './page-one.component.html',
   styleUrls: ['./page-one.component.scss']
 })
-export class PageOneComponent implements OnInit {
+export class PageOneComponent {
 
   searchTerm: string;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   clearSearch() {
     this.searchTerm = undefined;

@@ -18,8 +18,6 @@ export class PageTwoComponent implements OnInit {
     someControl: this.form.get('someControl')
   };
 
-  constructor() { }
-
   ngOnInit() {
     this.form.disable();
   }

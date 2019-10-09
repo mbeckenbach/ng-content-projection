@@ -3,55 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { PageOneComponent } from './page-one/page-one.component';
-import { PageTwoComponent } from './page-two/page-two.component';
-import { ContextActionsPortalComponent } from './context-actions/context-actions-portal.component';
-import { PortalModule } from '@angular/cdk/portal';
-import { ContextActionsComponent } from './context-actions/context-actions.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatFormFieldModule,
-  MatIconModule,
-  MatInputModule,
-  MatTabsModule,
-  MatToolbarModule
-} from '@angular/material';
-import { ContextTitleDirective } from './context-title/context-title.directive';
-import { ContextTitlePortalComponent } from './context-title/context-title-portal.component';
-import { ContextTitleComponent } from './context-title/context-title.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent,
-    PageOneComponent,
-    PageTwoComponent,
-    ContextActionsPortalComponent,
-    ContextActionsComponent,
-    ContextTitleDirective,
-    ContextTitlePortalComponent,
-    ContextTitleComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PortalModule,
-    FormsModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatTabsModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatCardModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

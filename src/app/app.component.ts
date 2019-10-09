@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { appRoutes } from './app-routing.module';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  navLinks = [
-    { path: ['home'], label: 'Home' },
-    { path: ['page-one'], label: 'Page One' },
-    { path: ['page-two'], label: 'Page Two' },
-  ];
+  navLinks = appRoutes
+    .filter(route => route.data && route.data.label)
+    .map(route => {
+      return {
+        path: [route.path],
+        label: route.data.label
+      };
+    });
 }

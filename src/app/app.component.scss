@@ -5,6 +5,14 @@
   .spacer {
     flex: 1;
   }
+
+  .page-title-has-child {
+    &:after {
+      content: '/';
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
 }
 
 .mat-tab-nav-bar {

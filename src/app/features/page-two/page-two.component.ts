@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-page-two',
@@ -17,6 +18,10 @@ export class PageTwoComponent implements OnInit {
   controls = {
     someControl: this.form.get('someControl')
   };
+
+  pageTitle = this.route.snapshot.data.label;
+
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.form.disable();

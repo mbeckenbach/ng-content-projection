@@ -1,12 +1,23 @@
-<mat-toolbar color="primary">
+<mat-toolbar [color]="(contextActions?.hasTemplate$ | async) ? 'warn' : 'primary'">
 
-  <app-context-title-portal>
+  <!-- Back Button -->
+  <a *ngIf="title.hasTemplate"
+     [routerLink]="navLinks[0].path"
+     mat-icon-button>
+    <mat-icon>arrow_back</mat-icon>
+  </a>
+
+  <h1 [class.page-title-has-child]="title.hasTemplate">
     Content Projection Demo
+  </h1>
+
+  <!-- Dynamic Page Title -->
+  <app-context-title-portal #title>
   </app-context-title-portal>
 
   <div class="spacer"></div>
 
-  <app-context-actions-portal>
+  <app-context-actions-portal #contextActions>
   </app-context-actions-portal>
 </mat-toolbar>
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-page-one',
@@ -8,6 +9,10 @@ import { Component } from '@angular/core';
 export class PageOneComponent {
 
   searchTerm: string;
+
+  pageTitle = this.route.snapshot.data.label;
+
+  constructor(private route: ActivatedRoute) {}
 
   clearSearch() {
     this.searchTerm = undefined;

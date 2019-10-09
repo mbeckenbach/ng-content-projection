@@ -1,3 +1,4 @@
+<!-- Changes color to red if projected context actions exist -->
 <mat-toolbar [color]="(contextActions?.hasTemplate$ | async) ? 'warn' : 'primary'">
 
   <!-- Back Button -->
@@ -7,20 +8,25 @@
     <mat-icon>arrow_back</mat-icon>
   </a>
 
+  <!-- page title + sub-page title if projected title exists -->
   <h1 [class.page-title-has-child]="title.hasTemplate">
     Content Projection Demo
   </h1>
 
-  <!-- Dynamic Page Title -->
+  <!-- Projected Page Title -->
   <app-context-title-portal #title>
   </app-context-title-portal>
 
+  <!-- Just some space between -->
   <div class="spacer"></div>
 
+  <!-- Projected context actions -->
   <app-context-actions-portal #contextActions>
   </app-context-actions-portal>
+
 </mat-toolbar>
 
+<!-- Navbar -->
 <nav color="accent"
      mat-tab-nav-bar>
   <a #rla="routerLinkActive"
@@ -33,6 +39,7 @@
   </a>
 </nav>
 
+<!-- Main content -->
 <div class="main">
   <router-outlet></router-outlet>
 </div>

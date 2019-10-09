@@ -1,7 +1,9 @@
+<!-- Displays projected template -->
 <ng-container *ngIf="contextActionsService.contextActionsPortal$ | async as portal; else noPortalHost">
   <ng-container [cdkPortalHost]="portal"></ng-container>
 </ng-container>
 
+<!-- Displays default content if no projected template exists-->
 <ng-template #noPortalHost>
   <ng-content></ng-content>
 </ng-template>

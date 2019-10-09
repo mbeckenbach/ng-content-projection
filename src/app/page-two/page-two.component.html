@@ -1,5 +1,27 @@
-<p>page-two works!</p>
+<!-- Page content -->
+<ng-container>
+  <h1>Page Two</h1>
 
-<app-context-actions>
-  Actions Page Two
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <button #pseudoSubmit style="display: none;" type="submit"></button>
+
+    <div>
+      <label for="someControl">Some control</label><br>
+      <input #someControlInput
+             [formControl]="controls.someControl"
+             id="someControl">
+    </div>
+
+  </form>
+</ng-container>
+
+<app-context-actions *ngIf="form.enabled">
+  <div class="context-actions">
+    <button (click)="pseudoSubmit.click()" type="button">SAVE</button>
+    <button (click)="onCancelClick()" type="button">CANCEL</button>
+  </div>
+</app-context-actions>
+
+<app-context-actions *ngIf="form.disabled">
+  <button (click)="onEditClick()" type="button">Edit</button>
 </app-context-actions>

@@ -9,6 +9,7 @@ import { PageTwoComponent } from './page-two/page-two.component';
 import { ContextActionsPortalComponent } from './context-actions/context-actions-portal.component';
 import { PortalModule } from '@angular/cdk/portal';
 import { ContextActionsComponent } from './context-actions/context-actions.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import { ContextActionsComponent } from './context-actions/context-actions.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PortalModule
+    PortalModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

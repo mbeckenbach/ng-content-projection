@@ -1,5 +1,22 @@
-<p>page-one works!</p>
+<!-- Page content -->
+<ng-container>
+  <h1>Page One</h1>
+  <p>
+    <b>Search Term:</b> {{searchTerm ? searchTerm : '-'}}
+  </p>
+  <ng-container *ngTemplateOutlet="clearButton"></ng-container>
+</ng-container>
 
+<!-- Context actions for the app bar -->
 <app-context-actions>
-  Actions Page One
+  <input (keyup.escape)="clearSearch()"
+         [(ngModel)]="searchTerm"
+         placeholder="Search..."
+         type="text">
+  <ng-container *ngTemplateOutlet="clearButton"></ng-container>
 </app-context-actions>
+
+<!-- Button to clear search -->
+<ng-template #clearButton>
+  <button (click)="clearSearch()" *ngIf="searchTerm">Clear</button>
+</ng-template>

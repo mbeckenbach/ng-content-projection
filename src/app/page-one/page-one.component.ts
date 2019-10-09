@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageOneComponent implements OnInit {
 
+  searchTerm: string;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  clearSearch() {
+    this.searchTerm = undefined;
+  }
 }
